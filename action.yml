@@ -6,7 +6,7 @@ inputs:
     description: "Destination server username"
 
   host-ip:
-    description: "Destination server host IP address. Example: 233.24.52.14"
+    description: "Destination server host IP address on domain. Example: 233.24.52.14"
 
   host-key:
     description: "The private SSH key for authorization"
