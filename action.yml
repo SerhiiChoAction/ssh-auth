@@ -16,10 +16,14 @@ runs:
   steps:
     - name: Create authorization key
       run: |
+        echo "⌛ Creating authorization key..."
         mkdir -p ~/.ssh
         echo "${{ inputs.host-key }}" | tee ~/.ssh/id_rsa > /dev/null
         chmod 600 ~/.ssh/id_rsa
+        echo "✅ ~/.ssh/id_rsa is created!"
 
     - name: Authorize host key
       run: |
+        echo "⌛ Authorizing host key..."
         ssh-keyscan -H "${{ inputs.host-ip }}" >> ~/.ssh/known_hosts
+        echo "✅ Destination host is authorized!"
