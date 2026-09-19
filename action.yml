@@ -1,5 +1,5 @@
 name: "SSH Auth"
-description: "Forgejo composite action to setup SSH authentication. It creates SSH key /key in your root direcoty which you can pass to SSH commands."
+description: "Forgejo composite action to setup SSH authentication. It creates SSH key ~/.ssh/id_rsa which you can pass to SSH commands."
 
 inputs:
   host-user:
@@ -17,8 +17,8 @@ runs:
     - name: Create authorization key
       run: |
         mkdir -p ~/.ssh
-        echo "${{ inputs.host-key }}" | tee /key > /dev/null
-        chmod 600 /key
+        echo "${{ inputs.host-key }}" | tee ~/.ssh/id_rsa > /dev/null
+        chmod 600 ~/.ssh/id_rsa
 
     - name: Authorize host key
       run: |
