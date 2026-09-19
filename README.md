@@ -1,6 +1,6 @@
 # SSH Auth Action
 
-Forgejo composite action to setup SSH authentication. It creates SSH key `/key` in your root direcoty which you can pass to SSH commands.
+Forgejo composite action to setup SSH authentication. It creates SSH key ~/.ssh/id_rsa which you can pass to SSH commands.
 
 ## Usage Example
 
@@ -30,5 +30,5 @@ jobs:
 
       - name: Restart destination server
         run: |
-           ssh -i /key ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }} "cd ~/project && ./cmd/restart"
+           ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }} "cd ~/project && ./cmd/restart"
 ```
