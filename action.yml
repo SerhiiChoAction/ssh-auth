@@ -15,6 +15,7 @@ runs:
   using: composite
   steps:
     - name: Create authorization key
+      shell: bash
       run: |
         echo "⌛ Creating authorization key..."
         mkdir -p ~/.ssh
@@ -23,6 +24,7 @@ runs:
         echo "✅ ~/.ssh/id_rsa is created!"
 
     - name: Authorize host key
+      shell: bash
       run: |
         echo "⌛ Authorizing host key..."
         ssh-keyscan -H "${{ inputs.host-ip }}" >> ~/.ssh/known_hosts
