@@ -1,6 +1,6 @@
 # SSH Auth Action
 
-Forgejo composite action to setup SSH authentication. It creates SSH key ~/.ssh/id_rsa which you can pass to SSH commands.
+Composite action to setup SSH authentication. It creates SSH key ~/.ssh/id_rsa which you can pass to SSH commands.
 
 ## Usage Example
 
@@ -15,14 +15,14 @@ on:
 jobs:
   deploy:
     name: Deploy
-    runs-on: debian13-podman
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
       - name: Create SSH key
-        uses: https://codeberg.org/act/ssh-auth@v1
+        uses: SerhiiChoAction/ssh-auth@v1
         with:
           host-user: ${{ secrets.HOST_USER }}
           host-ip: ${{ secrets.HOST_IP }}

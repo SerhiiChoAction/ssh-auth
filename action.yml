@@ -1,5 +1,5 @@
 name: "SSH Auth"
-description: "Forgejo composite action to setup SSH authentication. It creates SSH key ~/.ssh/id_rsa which you can pass to SSH commands."
+description: "Composite action to setup SSH authentication. It creates SSH key ~/.ssh/id_rsa which you can pass to SSH commands."
 
 inputs:
   host-user:
