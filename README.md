@@ -6,7 +6,6 @@ Composite action to setup SSH authentication. It creates SSH key ~/.ssh/id_rsa w
 
 ```yml
 name: Deploy
-enable-email-notifications: true
 
 on:
   push:
